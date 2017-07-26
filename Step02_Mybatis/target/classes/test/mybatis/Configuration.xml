@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	
+	<!-- sql 문을 정의하고 있는 xml 문서 -->
+	<mappers>
+		<mapper resource="test/mybatis/MemberMapper.xml"/> <!-- dao에 작성하던 sql문을 여기다가 작성할꺼임 -->
+	</mappers>
+</configuration>

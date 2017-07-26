@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<!-- Spring bean 컨테이너에 등록할 객체를 스캔해서 등록 -->
+	<!-- 패키지를 스캔해서 spring 컨테이너에서 관리할 객체가 있으면 객체를 생성해서 자기가 관리한다. -->
+	<context:component-scan base-package="test.controller"/>
+	<context:component-scan base-package="test.friends.controller"/>
+	
+	
+
+	<!-- View Page 설정 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- 부분프로그래밍을 하는것을 framework라고한다. -->
+		<property name="prefix" value="/WEB-INF/views/"/> <!-- 앞에 이걸붙이겠다  : setPrefix() 라는 메소드-->
+		<property name="suffix" value=".jsp"/> <!-- 뒤에 이걸붙이겠다 : setSuffix()  -->
+		<!--  spring은 객체를 싱글톤으로 관리하는 컨테이너를 가지고있다. -->
+	</bean>
+</beans>

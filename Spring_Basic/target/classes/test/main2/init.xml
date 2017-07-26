@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Engine 객체 -->
+<bean id = "myEngine" class = "test.mypac.Engine"></bean>
+<!-- myEngine = new Engine(); -->
+<bean id = "car1"  class="test.mypac.Car"></bean>
+<bean id = "car2"  class="test.mypac.Car">
+<!-- car2 = new Car(); -->
+	<property name="company" value="현대자동차"/>
+	<!-- car2.setCompany(); 숫자(num) 문자(String) 을 넣어줄때는 value에 넣어줌-->
+	<property name="engine" ref="myEngine"/>
+	<!-- car2.setEngine(); 참조값은 ref로 넣어야함 그럼 car2.setEngine(myEngine) 이렇게됨
+		car 클래스에 set메소드(필드에 저장하는)가 정의되어있어야함
+	-->
+</bean>
+</beans>

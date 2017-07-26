@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- id 를 부여하지 않아도 type 으로 객체의 참조값을 얻어 낼수있다. -->
+<bean class="test.mypac.MemberDaoImpl"></bean>
+</beans>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--  new WeaponImpl() 한 객체의 참조값을 myWeapon 이라는 아이디를 관리하기 -->
+	<bean id = "myWeapon" class= "test.mypac.WeaponImpl"></bean>
+</beans>

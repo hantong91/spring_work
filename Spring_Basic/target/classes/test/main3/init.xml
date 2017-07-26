@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--  MemberDto 객체를 생성하는 설정을 해보세요
+	id = mem1
+	번호 =1
+	이름 = 김구라
+	주소 = 노량진
+	이라는 정보를 가지도록
+ -->
+<bean id = "mem1" class="test.mypac.MemberDto"> <!-- MemberDto mem1=new MemberDto(); -->
+	<!-- setter 메소드를 이용해서 값을 넣어주는 방법 -->
+	<property name="num" value="1" /> <!-- mem1.setNum(1) -->
+	<property name="name" value="김구라" /><!-- mem1.setName(김구라) -->
+	<property name="addr" value="노량진" /><!--  mem1.setAddr(노량진) -->
+	
+</bean>
+<bean id = "mem2" class ="test.mypac.MemberDto">
+<!--  생성자의 인자로 값을 넣어주는 방법(생성자 유징필드로 만든 생성자) -->
+	<constructor-arg name = "num" value="2"/>
+	<constructor-arg name = "name" value="해골"/>
+	<constructor-arg name="addr" value="행신동"/>
+</bean>
+
+<bean id = "mem3" class ="test.mypac.MemberDto">
+	<property name="num">
+		<value>3</value>
+	</property>
+	<property name="name">
+		<value>원숭이</value>
+	</property>
+	<property name="addr">
+		<value>동물원</value>
+</property>
+</bean>
+</beans>
+		
