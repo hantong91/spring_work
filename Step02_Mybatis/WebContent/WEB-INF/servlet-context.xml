@@ -40,6 +40,7 @@
 	<context:component-scan base-package="test.member.service"/>
 	<context:component-scan base-package="test.member.dao"/>
 	
+	<!-- Spring Bean Container에서 관리되는 객체가 되는방법 1.conponent scan 2.bean 선언(Autowired로 어노테이션)-->
 	
 
 	<!-- View Page 설정 -->

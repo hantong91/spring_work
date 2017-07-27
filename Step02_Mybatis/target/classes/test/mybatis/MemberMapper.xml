@@ -6,13 +6,13 @@
 
 <!-- 여기다가 insert update delete select 등을 코딩하고 다른데서 이걸 퍼가는식 -->
 
-	<select id="getList" resultType="test.member.dto.MemberDto">
+	<select id="getList" resultType="memberDto">
 		SELECT num,name,addr
 		FROM member
 		ORDER BY num ASC
 	</select>
 							
-	<insert id="insert" parameterType="test.member.dto.MemberDto">
+	<insert id="insert" parameterType="memberDto">
 		INSERT INTO member
 		(num,name,addr)
 		VALUES(member_seq.NEXTVAL,#{name},#{addr})
@@ -21,5 +21,15 @@
 	<delete id="delete" parameterType="int">
 		DELETE FROM member
 		WHERE num = #{num}
-	</delete>												
+	</delete>	
+	<select id="getData" parameterType="int" resultType="memberDto">
+		SELECT num,name,addr
+		FROM member
+		WHERE num=#{num}
+	</select>			
+	<update id="update" parameterType="memberDto">
+		UPDATE member
+		SET name=#{name},addr=#{addr}
+		WHERE num=#{num}
+	</update>								
 </mapper>
