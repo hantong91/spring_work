@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.gura.step06.file.dto.FileDto" 
+			alias="fileDto"/>
+	</typeAliases>
+	
+	<!-- sql 문을 정의하고 있는 xml 문서 -->
+	<mappers>
+		<mapper resource="com/gura/step06/mybatis/FileMapper.xml"/>
+	</mappers>	
+</configuration>
+
+
+
+
+
+
+
