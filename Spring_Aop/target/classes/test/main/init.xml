@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+<bean class= "test.service.MemberServiceImpl"/>
+<bean class= "test.service.BoardServiceImpl"/>
+
+
+<bean id = "printLogAspect" class="test.aspect.PrintLogAspect"> </bean>
+
+<aop:config><!-- aspectj expression -->
+	<aop:pointcut expression="execution(public void *())" id="myPoint"/> <!-- 여기가 거기 -->
+	<aop:aspect ref="printLogAspect"><!-- 이객체에 있는 -->
+		<aop:around method="printLog" pointcut-ref="myPoint"/>
+							<!-- 이 메소드를 -->         <!--여기에 적용을 해라  -->
+	</aop:aspect>
+</aop:config>
+</beans>
