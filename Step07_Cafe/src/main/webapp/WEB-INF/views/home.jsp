@@ -18,12 +18,16 @@
 	</c:when>
 	<c:otherwise>
 		<div>
-			<strong><a href="users/private/info.do">${id }</a></strong> 님 로그인중 ...
+			<strong><a href="users/info.do">${id }</a></strong> 님 로그인중 ...
 			<a href="users/signout.do">로그아웃</a>
 		</div>
 	</c:otherwise>
 </c:choose>
 
+<ul>
+	<li><a href="private/play.do">로그인 회원 전용 공간 입장</a></li>
+	<li><a href="cafe/list.do">카페 글 목록 보기</a></li>
+</ul>
 
 <h3>공지 사항 입니다.</h3>
 <ul>

@@ -11,7 +11,8 @@ public interface UsersService {
 	public ModelAndView signup(UsersDto dto,HttpServletRequest request);
 	public boolean canUseId(String id);
 	public ModelAndView signin(UsersDto dto,HttpServletRequest request);
-	public ModelAndView updateForm(HttpSession session);
-	public void udpate(UsersDto dto);
+	//public ModelAndView updateForm(HttpSession session);
+	public void update(UsersDto dto);
 	public ModelAndView delete(HttpSession session);
+	public ModelAndView detail(String id);
 }

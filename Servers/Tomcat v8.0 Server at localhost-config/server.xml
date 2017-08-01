@@ -68,6 +68,7 @@
                connectionTimeout="20000"
                redirectPort="8443" />
     -->
+    
     <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443
          This connector uses the NIO implementation that requires the JSSE
          style configuration. When using the APR/native implementation, the
@@ -124,7 +125,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Step01_Hello" path="/Step01_Hello" reloadable="true" source="org.eclipse.jst.jee.server:Step01_Hello"/><Context docBase="Step02_Mybatis" path="/Step02_Mybatis" reloadable="true" source="org.eclipse.jst.jee.server:Step02_Mybatis"/></Host>
+      <Context docBase="Step07_Cafe" path="/step07" reloadable="true" source="org.eclipse.jst.jee.server:Step07_Cafe"/></Host>
     </Engine>
   </Service>
 </Server>
