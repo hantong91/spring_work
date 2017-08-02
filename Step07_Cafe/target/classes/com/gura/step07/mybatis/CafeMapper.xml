@@ -39,5 +39,11 @@
 		DELETE FROM board_cafe
 		WHERE num=#{num}
 	</delete>
+	
+	<update id="update" parameterType="usersDto">
+		UPDATE board_cafe
+		SET title=#{title}, content=#{content}
+		where num=#{num}
+	</update>
 </mapper>
 

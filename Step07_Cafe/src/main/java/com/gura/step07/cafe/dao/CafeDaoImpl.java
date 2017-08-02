@@ -41,12 +41,14 @@ public class CafeDaoImpl implements CafeDao{
 	@Override
 	public CafeDto getData(int num) {
 		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("cafe.getData",num);
 	}
 
+	//조회수 증가 시키는 메소드
 	@Override
 	public void increaseViewCount(int num) {
-		// TODO Auto-generated method stub
+		session.update("cafe.increaseViewCount",num);
+		
 		
 	}
 

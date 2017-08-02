@@ -21,14 +21,14 @@ public class CafeCommentDaoImpl implements CafeCommentDao{
 
 	@Override
 	public List<CafeCommentDto> getList(int ref_group) {
-		List<CafeCommentDto> list =session.selectList("cafeComment.getList",ref_group);
-		return null;
+		
+		return session.selectList("cafeComment.getList",ref_group);
 	}
 
 	@Override
 	public int getSequence() {
-		// TODO Auto-generated method stub
-		return 0;
+		int seq=session.selectOne("cafeComment.getSequence");
+		return seq;
 	}
 
 }

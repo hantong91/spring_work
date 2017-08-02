@@ -6,12 +6,43 @@ import javax.servlet.http.HttpSession;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
 @Aspect
 @Component
 public class LoginAspect {
+	
+	@Around("execution(public java.lang.String idCheck*(..))")
+	public Object idCheck(ProceedingJoinPoint joinPoint) throws Throwable{
+		//Aop 가 적용된 메소드에 전달된 인자를 배열로 얻어오기
+		Object[] args=joinPoint.getArgs();
+		boolean isLogin=false;
+		for(Object tmp:args){
+			if(tmp instanceof HttpSession){
+				//세션 객체를 이용해서
+				HttpSession session=(HttpSession)tmp;
+				//로그인된 사용자인지 체크한다.
+				String id=(String)session.getAttribute("id");
+				if(id!=null){
+					isLogin=true;
+				}
+			}
+		}
+		
+		if(isLogin){//로그인을 했으면 
+			//Aop 가 적용된 메소드를 수행하고 
+			Object obj=joinPoint.proceed();
+			//리턴된 객체를 그대로 리턴한다. 즉 검사만하고 메소드를 실행시킴
+			return obj;
+		}else{//로그인을 하지 않았으면
+			//Aop 가 적용된 메소드를 수행하지 않고 바로 아래와 같은 
+			//문자열을 리턴해서 다른곳으로 보낸다. 
+			return "redirect:/home.do";
+		}
+	}
+	
 	
 	@Around("execution(* private*(..))")
 	public Object loginCheck(ProceedingJoinPoint joinPoint) throws Throwable{
