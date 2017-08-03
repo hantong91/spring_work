@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop">
+	<insert id="signup" parameterType="shopDto">
+		INSERT INTO client_account
+		(id)
+		VALUES(#{id})
+	</insert>
+	<update id="deposit" parameterType="shopDto">
+		UPDATE client_account
+		SET balance = balance + #{money}
+		WHERE id=#{id}
+	</update>
+	<update id="withDraw" parameterType="shopDto">
+		UPDATE client_account
+		SET balance = balance -#{money}
+		WHERE id=#{id}
+	</update>
+	<update id="addPoint" parameterType="shopDto">
+		UPDATE client_account
+		SET bonusPoint = bonusPoint + #{point}
+		WHERE id=#{id}
+	</update>
+	<insert id="requestDelivery" parameterType="shopDto">
+		INSERT INTO delivery
+		(num, name, addr)
+		VALUES(delivery_seq.NEXTVAL,#{id},#{addr})
+	</insert>
+</mapper>
+
