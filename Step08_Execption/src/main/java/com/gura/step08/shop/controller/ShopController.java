@@ -73,7 +73,9 @@ public class ShopController {
 	@ExceptionHandler(DataAccessException.class)
 	public ModelAndView handelDataAccessException(DataAccessException dae){
 		ModelAndView mView=new ModelAndView();
-		mView.addObject("exception",dae);
+		mView.addObject("exception",dae);  // 자세히는 모르겠지만 data_access 페이지에서 
+											//addObject에 담긴 exception에 el로 exception.message하면  예외내용이 출력됨
+											//아마도 DataAccessException에 message라는 필드가 있나봄
 		mView.setViewName("error/data_access");
 		return mView;
 	}

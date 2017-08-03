@@ -7,11 +7,12 @@ public class CustomException extends Exception{
 		this.message=message;
 	}
 	//setter
-	public void setMessage(String message){
+	public void setmessage(String message){
 		this.message =message;
 	}
 	//getter
-	public String getMessage(){
-		return message; // getter 를 정의해놓으면 메세지를 출력가능하게됨
+	public String getmessage(){
+		return message; // getter 를 정의해놓으면 메세지를 출력가능하게됨 
+		//없애면 CustomException발생했을때 이 객체를 생성해서 필드를 참조할때 null되서 안뜸
 	}
 }
